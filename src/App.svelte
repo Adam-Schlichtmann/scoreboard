@@ -87,6 +87,7 @@
 <style>
   :global(body) {
     margin: 0;
+    background-color: #77cbb9;
   }
 
   round {
@@ -101,11 +102,17 @@
     flex-direction: row;
   }
 
-  h1 {
-    color: #ff3e00;
-    text-transform: uppercase;
-    font-size: 4em;
-    font-weight: 100;
+  button {
+    background-color: #75b8c8;
+    border-color: #75b8c8;
+    border-radius: 1em;
+  }
+  button:active {
+    background-color: #506c64;
+    border-color: #506c64;
+  }
+  p {
+    margin: auto 32px;
   }
 
   @media (min-width: 640px) {
