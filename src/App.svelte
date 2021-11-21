@@ -157,7 +157,7 @@
     background-color: #75b8c8;
     color: #220c10;
     outline: none;
-    margin: 2px;
+    font-size: large;
   }
   button {
     background-color: #75b8c8;
@@ -165,6 +165,7 @@
     border-radius: 1em;
     min-width: 100px;
     width: 10%;
+    font-size: large;
   }
 
   button:active,
@@ -175,6 +176,7 @@
 
   p {
     margin: auto 32px;
+    font-size: large;
   }
 
   @media (min-width: 640px) {
