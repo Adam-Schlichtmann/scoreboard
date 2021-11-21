@@ -81,53 +81,23 @@
   <button on:click={increment}>Next</button>
 </round>
 <board>
-  <input value="Names" disabled />
-  <input value="Feathers" disabled />
-  <input value="Bonus" disabled />
-  <input value="End of Round Goal" disabled />
-  <input value="Eggs" disabled />
-  <input value="Tucked Cards" disabled />
-  <input value="Cached Food" disabled />
-  <input value="Total" disabled />
+  <input value="Names" disabled class="label" />
+  <input value="Feathers" disabled class="label" />
+  <input value="Bonus" disabled class="label" />
+  <input value="End of Round Goal" disabled class="label" />
+  <input value="Eggs" disabled class="label" />
+  <input value="Tucked Cards" disabled class="label" />
+  <input value="Cached Food" disabled class="label" />
+  <input value="Total" disabled class="label" />
   {#each game as player, i}
     <input bind:value={player.name} placeholder="enter your name" />
-    <input
-      bind:value={player.score[round].feathers}
-      type="number"
-      min="0"
-      max="200"
-    />
-    <input
-      bind:value={player.score[round].bonus}
-      type="number"
-      min="0"
-      max="200"
-    />
-    <input
-      bind:value={player.score[round].endOfRound}
-      type="number"
-      min="0"
-      max="200"
-    />
-    <input
-      bind:value={player.score[round].eggs}
-      type="number"
-      min="0"
-      max="200"
-    />
-    <input
-      bind:value={player.score[round].tucked}
-      type="number"
-      min="0"
-      max="200"
-    />
-    <input
-      bind:value={player.score[round].cached}
-      type="number"
-      min="0"
-      max="200"
-    />
-    <input disabled bind:value={totals[i]} type="number" min="0" max="200" />
+    <input bind:value={player.score[round].feathers} type="number" min="0" />
+    <input bind:value={player.score[round].bonus} type="number" min="0" />
+    <input bind:value={player.score[round].endOfRound} type="number" min="0" />
+    <input bind:value={player.score[round].eggs} type="number" min="0" />
+    <input bind:value={player.score[round].tucked} type="number" min="0" />
+    <input bind:value={player.score[round].cached} type="number" min="0" />
+    <input disabled bind:value={totals[i]} type="number" min="0" />
   {/each}
 </board>
 
@@ -146,12 +116,18 @@
 
   board {
     display: grid;
-    grid-template-columns: 2fr repeat(5 1fr);
+    grid-template-columns: repeat(6 1fr);
     grid-template-rows: repeat(8, 1fr);
     grid-column-gap: 10px;
     grid-auto-flow: column;
   }
-
+  .label {
+    border-color: #77cbb9;
+    background-color: #77cbb9;
+    color: #220c10;
+    outline: none;
+    font-size: large;
+  }
   input {
     border-color: #220c10;
     background-color: #75b8c8;
@@ -163,8 +139,8 @@
     background-color: #75b8c8;
     border-color: #75b8c8;
     border-radius: 1em;
-    min-width: 100px;
-    width: 10%;
+    min-width: 150px;
+    width: 15%;
     font-size: large;
   }
 
